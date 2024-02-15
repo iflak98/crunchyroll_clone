@@ -9,13 +9,13 @@ import { Observable } from 'rxjs/internal/Observable';
 export class AnimeService {
   apiUrl = 'https://api.jikan.moe/v4/anime';
   rapidApiUrl = 'https://anime-db.p.rapidapi.com';
-  key = '40f53392ccmsheb6aa412485c745p1f7c6djsne4df96978ea9';
-  // key = '0e1de0ea58msh60d5e9112d7d671p1365e1jsn7d6e8c83e1e7';
+  // key = '40f53392ccmsheb6aa412485c745p1f7c6djsne4df96978ea9';
+  key = '0e1de0ea58msh60d5e9112d7d671p1365e1jsn7d6e8c83e1e7';
   constructor(private http: HttpClient) {}
   datagen: any = signal('');
   // searchbar:any;
   // searchbar:any= signal(false);
-  genreData:any=signal([])
+  genreData: any = signal([]);
   //  getAnime(param:any){}
   getAnime(param: any) {
     const params = {
@@ -45,19 +45,22 @@ export class AnimeService {
 
     //     // return this.http.get(this.apiUrl+'top/airing', { headers });
   }
-private searchbar=new BehaviorSubject<boolean>(false);
-search=this.searchbar.asObservable()
- setSearchBar(value: boolean) {
-  this.searchbar.next(value);
-}
-getSearchbar(){
-  return this.search;
-}
-
-
-
-
-
+  private searchbar = new BehaviorSubject<boolean>(false);
+  search = this.searchbar.asObservable();
+  setSearchBar(value: boolean) {
+    this.searchbar.next(value);
+  }
+  getSearchbar() {
+    return this.search;
+  }
+  private genreSelected = new BehaviorSubject<any>('');
+  genre = this.genreSelected.asObservable();
+  setgenreSelected(value: string) {
+    this.genreSelected.next(value);
+  }
+  getgenreSelected() {
+    return this.genre;
+  }
 
   getgenre(): Observable<any> {
     const options = {
@@ -86,7 +89,11 @@ getSearchbar(){
     // for search return all animes with "H" in their name
     // limit:"26"
     //  }
-
+    console.log("serv")
+    console.log(
+      'fromserv=>',
+      this.http.get('../src/assets/mock/animeList.json')
+    );
     return this.http.get(this.apiUrl, { params: param });
   }
   // getAnimePicturesbyId(id: number): Observable<any> {
@@ -108,5 +115,7 @@ getSearchbar(){
 
     return this.http.get<any>(this.rapidApiUrl + '/anime', options);
   }
-  
+allAnimeMock(){
+  return this.http.get('../assets/mock/animeList.json');
+}
 }

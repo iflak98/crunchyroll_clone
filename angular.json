@@ -27,7 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",{ "glob": "animeList.json", "input": "./", "output": "./assets/mock" }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",

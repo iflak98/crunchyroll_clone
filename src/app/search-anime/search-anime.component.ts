@@ -21,20 +21,25 @@ export class SearchAnimeComponent implements OnInit {
   constructor(private animeservice: AnimeService) {}
   ngOnInit(): void {
     console.log('data', this.animelist);
-    this.datagen = this.animeservice.datagen();
+
+    // this.datagen = this.animeservice.datagen();
     // this.animelist = this.animeservice.genreData();
-    console.log(
-      'this.animeservice.searchbar()',
-      this.animelist,
-      this.animeservice.getSearchbar()
-    );
+    this.filteredItems = [];
+    this.setValues();
+    this.getAnime();
+    console.log('data', this.filteredItems);
+  }
+
+  setValues() {
+    this.animeservice.getgenreSelected().subscribe((res) => {
+      this.datagen = res;
+      console.log('value rep', res);
+    });
     this.animeservice.getSearchbar().subscribe((data) => {
       this.searchbar = data;
     });
     // this.searchbar = this.animeservice.getSearchbar();
-    console.log('datagen', this.datagen, this.searchbar);
-    this.getAnime();
-    console.log('data', this.filteredItems);
+    console.log('datagen12', this.datagen, this.searchbar);
   }
   getAnime() {
     // this.animeservice.getAnimeForSearch().subscribe((res: any) => {
@@ -42,33 +47,29 @@ export class SearchAnimeComponent implements OnInit {
     //   this.filteredItems = this.animelist.slice(0, 10);
     // });
     // let selectedgen = "";
-    if (this.searchbar == false) {
-      // this.selectedgen = this.datagen;
-
-      console.log('datagen---', this.datagen);
-    } else {
-      this.datagen = '';
-      // window.location.reload();
-    }
-
-    const param = {
-      page: '1',
-      size: '26000',
-      search: '',
-      genres: this.datagen,
-      sortBy: '',
-      sortOrder: '',
-    };
-    this.animeservice.getAnime(param).subscribe((res: any) => {
-      this.animelist = res.data;
-      this.filteredItems = this.animelist.slice(0, 10);
+    this.animeservice.allAnimeMock().subscribe((res: any) => {
+      this.animelist = res;
+      console.log(res, 'rtest');
+      if (this.searchbar == false) {
+        // this.selectedgen = this.datagen;
+        this.filteredItems = this.filterByGenre(this.animelist, this.datagen);
+        console.log('datagen---', this.datagen);
+      } else {
+        // this.datagen = '';
+        this.filteredItems = this.animelist.slice(0, 10);
+      }
     });
+
     // this. animeservice.getAnimeList(param).subscribe(
     //   data =>{
     //     this.animelist = data.data
     //     console.log("dataaaa=>",this.animelist,data)
     //     this.filteredItems = this.animelist.slice(0, 10);
     //   })
+  }
+  filterByGenre(animelist: any, genre: any) {
+    let newList = animelist.filter((item: any) => item.genres.includes(genre));
+    return newList.slice(0, 10);
   }
 
   updateResults() {

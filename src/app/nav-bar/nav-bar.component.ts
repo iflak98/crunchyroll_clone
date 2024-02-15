@@ -34,18 +34,34 @@ export class NavBarComponent implements OnInit {
   toggleDropdown() {
     this.isDropdownVisible = true;
     console.log(this.isDropdownVisible);
-    this.animeservice.getgenre().subscribe({
-      next: (res: any) => {
-        this.genre = res;
-        console.log('data recieved=>', this.genre);
-      },
-      error: (error) => {
-        console.error('Error fetching anime data:', error);
-      },
-      complete: () => {
-        // Optional: Handle completion logic if needed
-      },
-    });
+    // this.animeservice.getgenre().subscribe({
+    //   next: (res: any) => {
+    //     this.genre = res;
+    //     console.log('data recieved=>', this.genre);
+    //   },
+    //   error: (error) => {
+    //     console.error('Error fetching anime data:', error);
+    //   },
+    //   complete: () => {
+    //     // Optional: Handle completion logic if needed
+    //   },
+    // });
+    this.genre = [
+      'Action',
+      'Adventure',
+      'Comedy',
+      'Drama',
+      'Fantasy',
+      'Horror',
+
+      'Mystery',
+      'Romance',
+      'Sci-Fi',
+      'Slice of Life',
+      'Sports',
+      'Thriller',
+      'Hentai',
+    ];
   }
 
   // generateDownloadJsonUri() {
@@ -61,26 +77,30 @@ export class NavBarComponent implements OnInit {
     }
   }
   search() {
-    this.animeservice.datagen.set(' ');
-  
+    // this.animeservice.datagen.set(' ');
+    this.animeservice.setgenreSelected("")
     this.animeservice.setSearchBar(true);
-    console.log(this.router.url)
+    console.log(this.router.url);
 
-if(this.router.url=='/search')
-   window.location.reload();
-   
+    // if (this.router.url == '/search') window.location.reload();
   }
   // data: any = signal('');
   genreSelected(genre: any) {
+    
     this.selectedGenre = genre;
     this.isDropdownVisible = !this.isDropdownVisible;
-    this.animeservice.datagen.set(this.selectedGenre);
-    this.animeservice.setSearchBar(false)
-    if(this.router.url=='/search')
-   window.location.reload();
+    // this.animeservice.datagen.set(this.selectedGenre);
+    this.animeservice.setgenreSelected(this.selectedGenre);
+    this.animeservice.setSearchBar(false);
+      
+    //  window.location.reload();
+
+    console.log(
+      'selected genre=>',
+      this.selectedGenre,
+      this.animeservice.getSearchbar()
+    );
    
-  
-    console.log('selected genre=>', this.selectedGenre, this.animeservice.getSearchbar());
     // const param={
     //   page: "1",
     //   size: "26",

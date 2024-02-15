@@ -17,7 +17,7 @@
       </button>
       <div *ngIf="isDropdownVisible" class="dropdown-content">
         <div class="dropdown-genre" *ngFor="let gen of genre">
-          <a (click)="genreSelected(gen._id)" routerLink="/search" >{{ gen._id }}</a>
+          <a (click)="genreSelected(gen)" routerLink="/search" >{{ gen}}</a>
         </div>
       </div>
     </div>
