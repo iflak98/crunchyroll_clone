@@ -20,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { DescriptionLimitPipe } from './description-limit.pipe';
+import { LoginComponent } from './login/login.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { DescriptionLimitPipe } from './description-limit.pipe';
     NavBarComponent,
     AnimeSliderComponent,
     PopularanimeComponent,
-    SearchAnimeComponent,DescriptionLimitPipe
+    SearchAnimeComponent,DescriptionLimitPipe, LoginComponent, WatchlistComponent
   ],
   imports: [
     BrowserModule,

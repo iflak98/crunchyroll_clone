@@ -1,0 +1,40 @@
+.container{
+    padding-top: 10rem;
+    
+}
+.image{
+    position: relative;
+    height: 10rem;
+    left: 42%;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+strong{
+    position: relative;
+    
+    font-size: 1rem;
+    left: 6%;
+    color: #F47521;
+    font-family:courier;
+}
+button {
+    border: 2px solid #F47521;
+    padding: 3px;
+    background-color: transparent;
+    color: #F47521;
+    height: 4rem;
+    width: 10rem;
+  
+    font-weight: bolder;
+    position: relative;
+    left: 44%;
+  
+  }
+  
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    color: #F47521;
+  }
