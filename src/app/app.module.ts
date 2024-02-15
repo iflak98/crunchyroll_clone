@@ -22,6 +22,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { DescriptionLimitPipe } from './description-limit.pipe';
 import { LoginComponent } from './login/login.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
+import { TempdevelopingComponent } from './tempdeveloping/tempdeveloping.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { WatchlistComponent } from './watchlist/watchlist.component';
     NavBarComponent,
     AnimeSliderComponent,
     PopularanimeComponent,
-    SearchAnimeComponent,DescriptionLimitPipe, LoginComponent, WatchlistComponent
+    SearchAnimeComponent,DescriptionLimitPipe, LoginComponent, WatchlistComponent, TempdevelopingComponent
   ],
   imports: [
     BrowserModule,

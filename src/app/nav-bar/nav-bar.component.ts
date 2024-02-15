@@ -78,7 +78,7 @@ export class NavBarComponent implements OnInit {
     this.animeservice.setgenreSelected('');
     this.animeservice.setSearchBar(true);
     console.log(this.router.url);
-    this.reloadpage();
+    this.reloadpage('search');
   }
   // data: any = signal('');
   genreSelected(genre: any) {
@@ -87,7 +87,7 @@ export class NavBarComponent implements OnInit {
     // this.animeservice.datagen.set(this.selectedGenre);
     this.animeservice.setgenreSelected(this.selectedGenre);
     this.animeservice.setSearchBar(false);
-    this.reloadpage();
+    this.reloadpage('search');
     //  window.location.reload();
 
     console.log(
@@ -96,12 +96,16 @@ export class NavBarComponent implements OnInit {
       this.animeservice.getSearchbar()
     );
   }
-  reloadpage() {
-    if (this.router.url == '/search') {
+  reloadpage(givenurl:any) {
+    if (this.router.url == '/'+givenurl) {
       // Force page reload
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/search']);
+        this.router.navigate(['/'+givenurl]);
       });
     }
+  }
+  change(){
+    
+    this.reloadpage('work-in-progress');
   }
 }
