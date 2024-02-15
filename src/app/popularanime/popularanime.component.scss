@@ -47,7 +47,7 @@
   font-size: x-small;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 20px;
   background-color: rgb(16, 15, 15);
   padding: 1rem;
   transform: translateY(100%);
@@ -70,6 +70,7 @@
 .card2 {
       display: flex;
       max-width: 100%;
+      color: #fff;
       background-color: #23252b;
       border-radius: 8px;
       overflow: hidden;
@@ -100,9 +101,27 @@
 
     .play-button {
       padding: 10px 20px;
-      background-color: #3498db;
+      background-color: #F47521 ;
       color: #fff;
       text-decoration: none;
       border-radius: 4px;
       display: inline-block;
+    }
+    button{
+      border: 2px solid   #F47521;
+      padding: 3px;
+      background-color: transparent;
+      color: #F47521;
+      height:4rem;
+      width:10rem;
+      left: 50%;
+      font-weight: bolder;
+      position: relative;
+      left: 45%;
+
+    }
+    button:hover{
+      cursor: pointer;
+      transform: scale(1.04);
+      color: #F47521;
     }

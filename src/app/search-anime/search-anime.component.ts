@@ -15,7 +15,7 @@ export class SearchAnimeComponent implements OnInit {
   // searchValue: any;
   searchValue = new FormControl('');
   pagination: any;
-  datagen:any;
+  datagen: any;
   // datagen: any = signal('');
   searchbar: any = true;
   // selectedgen: any = signal('');
@@ -42,7 +42,6 @@ export class SearchAnimeComponent implements OnInit {
     });
     // this.searchbar = this.animeservice.getSearchbar();
     console.log('datagen12', this.datagen, this.searchbar);
-  
   }
   getAnime() {
     // this.animeservice.getAnimeForSearch().subscribe((res: any) => {
@@ -50,11 +49,11 @@ export class SearchAnimeComponent implements OnInit {
     //   this.filteredItems = this.animelist.slice(0, 10);
     // });
     // let selectedgen = "";
-    this.filteredItems=[];
+    this.filteredItems = [];
     this.animeservice.allAnimeMock().subscribe((res: any) => {
       this.animelist = res;
       console.log(res, 'rtest');
-      if (this.searchbar == false) {
+      if (this.searchbar == false || this.datagen != '') {
         // this.selectedgen = this.datagen;
         this.filteredItems = this.filterByGenre(this.animelist, this.datagen);
         console.log('datagen---', this.datagen);
@@ -72,10 +71,11 @@ export class SearchAnimeComponent implements OnInit {
     //   })
   }
   filterByGenre(animelist: any, genre: any) {
-   
-    console.log("genre==",genre)
-    let newList = this.animelist.filter((item: any) => item.genres.includes(genre));
-    console.log("newlist",newList,animelist)
+    console.log('genre==', genre);
+    let newList = this.animelist.filter((item: any) =>
+      item.genres.includes(genre)
+    );
+    console.log('newlist', newList, animelist);
     return newList.slice(0, 10);
   }
 

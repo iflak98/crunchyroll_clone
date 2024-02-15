@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
   filteredItems: any;
   downloadJsonHref: any;
   selectedGenre: any;
-  // constructor(private animeService:AnimeService) {}
+
   constructor(private animeservice: AnimeService, private router: Router) {}
   ngOnInit(): void {}
   animelist1 = [1, 2, 3];
@@ -49,16 +49,16 @@ export class NavBarComponent implements OnInit {
     this.animeservice.allAnimeMock().subscribe((res: any) => {
       this.animelist = res;
       this.genre = new Set(); // Using a Set to store unique genres
-  
+
       // Iterate over each anime object
-      this.animelist.forEach((anime: { genres: any[]; }) => {
+      this.animelist.forEach((anime: { genres: any[] }) => {
         // Iterate over genres of each anime and add them to the set
-        anime.genres.forEach((genre:any) => {
+        anime.genres.forEach((genre: any) => {
           this.genre.add(genre);
         });
       });
-      console.log("genres",this.genre);
-    })
+      console.log('genres', this.genre);
+    });
   }
 
   // generateDownloadJsonUri() {
@@ -79,7 +79,6 @@ export class NavBarComponent implements OnInit {
     this.animeservice.setSearchBar(true);
     console.log(this.router.url);
     this.reloadpage();
-    // if (this.router.url == '/search') window.location.reload();
   }
   // data: any = signal('');
   genreSelected(genre: any) {
@@ -96,22 +95,6 @@ export class NavBarComponent implements OnInit {
       this.selectedGenre,
       this.animeservice.getSearchbar()
     );
-
-    // const param={
-    //   page: "1",
-    //   size: "26",
-    //   search: "",
-    //   genres: this.selectedGenre,
-    //   sortBy: "",
-    //   sortOrder: ""
-    // }
-    // this.animeservice.getAnime(param).subscribe((res: any) => {
-    //   this.animelist = res.data.slice(0, 10);
-    //   // this.filteredItems = this.animelist.slice(0, 10);
-    //   // this.animelist = res.data.slice(0, 10);
-    //   console.log("data==>>>>",this.animelist)
-    // });
-    // this.animeservice.genreData.set(this.animelist)
   }
   reloadpage() {
     if (this.router.url == '/search') {
@@ -121,20 +104,4 @@ export class NavBarComponent implements OnInit {
       });
     }
   }
-  // @HostListener('document:click', ['$event'])
-  // public documentClick(event: Event): void {
-  //   console.log(
-  //     'event=>',
-  //     event,
-  //     'this.isDropdownVisible=>',
-  //     this.isDropdownVisible
-  //   );
-  //   // this.isDropdownVisible
-  //   if ((this.isDropdownVisible = true)) {
-  //     this.animeservice.datagen.set('');
-  //     // this.isDropdownVisible = false;
-  //   }
-
-  //   //doSomething () --> Your logic when there is a document click
-  // }
 }

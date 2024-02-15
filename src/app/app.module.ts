@@ -19,6 +19,7 @@ import { SearchAnimeComponent } from './search-anime/search-anime.component';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { DescriptionLimitPipe } from './description-limit.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {MatSelectModule} from '@angular/material/select';
     NavBarComponent,
     AnimeSliderComponent,
     PopularanimeComponent,
-    SearchAnimeComponent
+    SearchAnimeComponent,DescriptionLimitPipe
   ],
   imports: [
     BrowserModule,
@@ -39,6 +40,7 @@ import {MatSelectModule} from '@angular/material/select';
      BrowserAnimationsModule,
      FormsModule,ReactiveFormsModule ,
      MatSelectModule,
+     
      MatExpansionModule,MatGridListModule,MatListModule,MatIconModule, FontAwesomeModule,
   ],
   providers: [],
