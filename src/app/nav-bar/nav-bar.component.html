@@ -30,15 +30,15 @@
     </mat-form-field> -->
     
 
-    <button mat-button color="primary">Primary</button>
+    <button mat-button class="button">Games</button>
     <div>
       <button (click)="togglenews()" class="dropbtn" id="dropbtn">
         <span>news</span>
         <mat-icon>keyboard_arrow_down</mat-icon>
       </button>
-      <div *ngIf="isnewsVisible" class="dropdown-content">
-        <div class="dropdown-genre" *ngFor="let ani of animelist1">
-          <a href="">news</a>
+      <div *ngIf="isnewsVisible" class="news">
+        <div class="newslist" *ngFor="let ani of animelist1">
+          <a href="">{{ani}}</a>
         </div>
       </div>
     </div>

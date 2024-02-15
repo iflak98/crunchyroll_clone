@@ -3,7 +3,7 @@
   z-index: 9;
   display: flex;
   justify-content: space-between;
-
+height: 3rem !important;
 }
 
 .browse {
@@ -54,19 +54,22 @@
   display: flex;
 
   & span {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
 
   }
 
   & span:hover {
     background-color: black;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
   }
 }
 
 .nav-left {
   display: flex;
   align-items: center;
+  .material-icons{
+    padding-top: 0rem !important;
+  }
 }
 
 img {
@@ -81,7 +84,7 @@ img {
   background-color: #23252b;
   color: white;
   padding: 20px;
-  font-size: 16px;
+  font-size: 15px;
   border: none;
   display: flex;
   align-items: center;
@@ -106,12 +109,11 @@ img {
 
 .dropdown-content {
   display: grid;
-  padding: 2rem;
-  column-gap: 2rem;
-  row-gap: 0.5rem;
-  // gap: 2rem;
+
+  padding-top: 2rem;
   grid-template-columns: repeat(5, 1fr);
   top: 4rem;
+  row-gap: 1rem;
   position: absolute;
   background-color: black;
   // min-width: 700px;
@@ -120,14 +122,48 @@ img {
   height: fit-content;
 }
 
-// .dropdown-content{
+.news {
+  display: flow;
+  padding-top: 1rem;
+  // padding: 1rem 2rem 1rem 1.5rem;
+  /* column-gap: 2rem; */
+  /* row-gap: 0.5rem; */
+  /* grid-template-columns: repeat(5, 1fr); */
+  row-gap: 1rem;
+  top: 4rem;
+  position: absolute;
+  background-color: black;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  width: 14rem;
 
-// }
+  // height: -moz-fit-content;
+  height: fit-content;
+
+
+}
+
+.newslist {
+  cursor: pointer !important;
+  font-size: medium;
+  height: 2rem;
+  row-gap: 1rem;
+  width: 10.5rem;
+  padding: 0rem 2rem 0rem 1.5rem;
+
+  &:hover {
+    background-color: #4d4d4d;
+
+  }
+
+}
+
 .dropdown-genre {
   cursor: pointer !important;
-
+  font-size: medium;
+  height: 2rem;
   width: 8rem;
-  padding: 1rem;
+  padding: 0rem 2rem 0rem 1.5rem;
 
   &:hover {
     background-color: #4d4d4d;
@@ -139,10 +175,26 @@ img {
 a {
   color: white !important;
   text-decoration: none !important;
+  font-weight: normal;
+}
+.button{
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: normal;
+  background-color: #23252b;
+  padding: 30px;
+  
+ 
+    &:hover {
+      background-color: black;
+      
+  
+    }
+  
 }
 
-.material-icons {
+.material-icons{
   cursor: default !important;
   color: white !important;
+  padding-top: 1rem;
 }
-

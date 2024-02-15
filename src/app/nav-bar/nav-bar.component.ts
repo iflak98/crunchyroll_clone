@@ -29,10 +29,11 @@ export class NavBarComponent implements OnInit {
 
   constructor(private animeservice: AnimeService, private router: Router) {}
   ngOnInit(): void {}
-  animelist1 = [1, 2, 3];
+  animelist1 = ["All News","Aime Awards","Crunchyroll Expo","Anime Movie Night"];
 
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
+    this.isnewsVisible=false;
     console.log(this.isDropdownVisible);
     // this.animeservice.getgenre().subscribe({
     //   next: (res: any) => {
@@ -70,8 +71,7 @@ export class NavBarComponent implements OnInit {
 
   togglenews() {
     this.isnewsVisible = !this.isnewsVisible;
-    if (this.isDropdownVisible) {
-    }
+   this.isDropdownVisible=false;
   }
   search() {
     // this.animeservice.datagen.set(' ');
