@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'crunchyroll_clone'`, () => {
+  it(`should have as title 'cruchyroll_clone'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('crunchyroll_clone');
+    expect(app.title).toEqual('cruchyroll_clone');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('crunchyroll_clone app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('cruchyroll_clone app is running!');
   });
 });

@@ -1,0 +1,64 @@
+<mat-toolbar class="navbar">
+  <div class="nav-left">
+    <!-- <img src="\assets\crunchyroll-orange-removebg-preview.png" alt="" /> -->
+
+    <div class="crunchyroll-title linking" routerLink="">
+
+      <a class="crunchyroll-logo linking">
+    
+      </a>
+     
+      <span>crunchyroll</span>
+    </div>
+    <div class="dropdown">
+      <button (click)="toggleDropdown()" class="dropbtn" id="dropbtn">
+        <span>Genre</span>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+      <div *ngIf="isDropdownVisible" class="dropdown-content">
+        <div class="dropdown-genre" *ngFor="let gen of genre">
+          <a (click)="genreSelected(gen._id)" routerLink="/search" >{{ gen._id }}</a>
+        </div>
+      </div>
+    </div>
+    <!-- <mat-form-field class="dropdown">
+      <mat-select placeholder="Favorite food" class="dropdown-content">
+        <mat-option *ngFor="let gen of genre" [value]="gen._id">
+          {{ gen._id }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    
+
+    <button mat-button color="primary">Primary</button>
+    <div>
+      <button (click)="togglenews()" class="dropbtn" id="dropbtn">
+        <span>news</span>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+      <div *ngIf="isnewsVisible" class="dropdown-content">
+        <div class="dropdown-genre" *ngFor="let ani of animelist1">
+          <a href="">hentai</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="nav-right">
+    <!-- <a
+      style="font-size: 4rem; display: list-item"
+      title="Download JSON"
+      [href]="downloadJsonHref"
+      download="download.json"
+    ></a> -->
+    <span>
+      <i class="material-icons"  (click)="search()" routerLink="/search">search</i>
+    </span>
+    <span>
+      <i class="material-icons">bookmark_border</i>
+    </span>
+    <span>
+      <i class="material-icons">login</i>
+    </span>
+  </div>
+</mat-toolbar>

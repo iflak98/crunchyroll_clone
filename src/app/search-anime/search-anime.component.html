@@ -1,0 +1,29 @@
+<div>
+  <div class="search" [hidden]="!searchbar">
+    <form class="search-form">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Search..."
+          type="search"
+          (keyup)="updateResults()"
+          [formControl]="searchValue"
+        />
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div *ngFor="let ani of filteredItems" class="card2">
+    <img src="{{ ani.image}}" alt="Card Image" />
+
+    <div class="card2-content">
+      <h2 class="card2-title">{{ ani.title }}</h2>
+      <p>
+        <strong>Ranking: </strong> {{ ani.ranking }} 
+      </p>
+      <p><strong>Total Episodes: </strong>{{ani.episodes}}</p>
+      <p class="card2-description">{{ ani.synopsis }}</p>
+      <a href="{{ani.link}}" class="play-button">Play</a>
+    </div>
+  </div>
+</div>
