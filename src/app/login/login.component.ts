@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent   implements OnInit{
   constructor() { }
   ngOnInit(): void {
-    this.getRandomQuote();
+    this.randomQuote=this.getRandomQuote(this.quotes);
+    this.randomGifs=this.getRandomQuote(this.gifs);
   }
   quotes: string[] = [
     "Under construction... because even websites need their makeover moments!",
@@ -22,9 +23,24 @@ export class LoginComponent   implements OnInit{
     "This page is like a fine wine - it needs time to mature. Check back soon!",
     "Like a caterpillar in a cocoon, this page is undergoing a metamorphosis. Stay tuned for its glorious transformation!"
   ];
+  gifs:string[]=[
+    "../assets/gifs/rika-takanashi.gif",
+    "../assets/gifs/peach-goma.gif",
+    "../assets/gifs/peach-goma-sad-cheek.gif",
+    "../assets/gifs/peach-goma-peach-and-goma.gif",
+    "../assets/gifs/meiling-thumbs-up.gif",
+    "../assets/gifs/happy-amine.gif",
+    "../assets/gifs/rika-takanashi.gif",
+    "../assets/gifs/ok-menhera.gif",
+    "../assets/gifs/meiling-thumbs-up.gif",
+    "../assets/gifs/happy-amine.gif",
+    "../assets/gifs/peach-goma-sad-cheek.gif"
+    
+  ]
+  randomGifs:string='';
   randomQuote: string='';
-getRandomQuote() {
-  const randomIndex = Math.floor(Math.random() * this.quotes.length);
-  this.randomQuote = this.quotes[randomIndex];
+getRandomQuote(quotes: string | any[]) {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
 }
 }
