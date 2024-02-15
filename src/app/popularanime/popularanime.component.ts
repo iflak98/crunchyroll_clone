@@ -55,17 +55,7 @@ export class PopularanimeComponent implements OnInit {
     // this.filteredItems=this.TopRanking()
   }
   currentIndex = 0;
-  search() {
-    this.animeservice.setgenreSelected('');
-    this.animeservice.setSearchBar(false);
-    console.log(this.router.url);
-    this.reloadpage();
-    console.log(
-      'polpuevha',
-      this.animeservice.setgenreSelected(''),
-      this.animeservice.setSearchBar(false)
-    );
-  }
+
   reloadpage() {
     if (this.router.url == '/search') {
       // Force page reload

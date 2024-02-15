@@ -45,7 +45,7 @@ export class AnimeService {
 
     //     // return this.http.get(this.apiUrl+'top/airing', { headers });
   }
-  private searchbar = new BehaviorSubject<boolean>(false);
+  private searchbar = new BehaviorSubject<boolean>(true);
   search = this.searchbar.asObservable();
   setSearchBar(value: boolean) {
     this.searchbar.next(value);
