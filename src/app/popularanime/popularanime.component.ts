@@ -12,7 +12,7 @@ export class PopularanimeComponent implements OnInit {
   filteredItems: any[] = [];
   topRankedAnime: any[] = [];
   popularAnime: any[] = [];
-  constructor(private animeservice: AnimeService ,private router: Router) {}
+  constructor(private animeservice: AnimeService, private router: Router) {}
   ngOnInit(): void {
     console.log('data', this.animelist);
     const param = {
@@ -58,7 +58,13 @@ export class PopularanimeComponent implements OnInit {
   search() {
     this.animeservice.setgenreSelected('');
     this.animeservice.setSearchBar(false);
-this.reloadpage();
+    console.log(this.router.url);
+    this.reloadpage();
+    console.log(
+      'polpuevha',
+      this.animeservice.setgenreSelected(''),
+      this.animeservice.setSearchBar(false)
+    );
   }
   reloadpage() {
     if (this.router.url == '/search') {

@@ -32,7 +32,7 @@ export class NavBarComponent implements OnInit {
   animelist1 = [1, 2, 3];
 
   toggleDropdown() {
-    this.isDropdownVisible = true;
+    this.isDropdownVisible = !this.isDropdownVisible;
     console.log(this.isDropdownVisible);
     // this.animeservice.getgenre().subscribe({
     //   next: (res: any) => {
