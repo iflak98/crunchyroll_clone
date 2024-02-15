@@ -46,22 +46,19 @@ export class NavBarComponent implements OnInit {
     //     // Optional: Handle completion logic if needed
     //   },
     // });
-    this.genre = [
-      'Action',
-      'Adventure',
-      'Comedy',
-      'Drama',
-      'Fantasy',
-      'Horror',
-
-      'Mystery',
-      'Romance',
-      'Sci-Fi',
-      'Slice of Life',
-      'Sports',
-      'Thriller',
-      'Hentai',
-    ];
+    this.animeservice.allAnimeMock().subscribe((res: any) => {
+      this.animelist = res;
+      this.genre = new Set(); // Using a Set to store unique genres
+  
+      // Iterate over each anime object
+      this.animelist.forEach((anime: { genres: any[]; }) => {
+        // Iterate over genres of each anime and add them to the set
+        anime.genres.forEach((genre:any) => {
+          this.genre.add(genre);
+        });
+      });
+      console.log("genres",this.genre);
+    })
   }
 
   // generateDownloadJsonUri() {
@@ -78,21 +75,20 @@ export class NavBarComponent implements OnInit {
   }
   search() {
     // this.animeservice.datagen.set(' ');
-    this.animeservice.setgenreSelected("")
+    this.animeservice.setgenreSelected('');
     this.animeservice.setSearchBar(true);
     console.log(this.router.url);
-
+    this.reloadpage();
     // if (this.router.url == '/search') window.location.reload();
   }
   // data: any = signal('');
   genreSelected(genre: any) {
-    
     this.selectedGenre = genre;
     this.isDropdownVisible = !this.isDropdownVisible;
     // this.animeservice.datagen.set(this.selectedGenre);
     this.animeservice.setgenreSelected(this.selectedGenre);
     this.animeservice.setSearchBar(false);
-      
+    this.reloadpage();
     //  window.location.reload();
 
     console.log(
@@ -100,7 +96,7 @@ export class NavBarComponent implements OnInit {
       this.selectedGenre,
       this.animeservice.getSearchbar()
     );
-   
+
     // const param={
     //   page: "1",
     //   size: "26",
@@ -116,6 +112,14 @@ export class NavBarComponent implements OnInit {
     //   console.log("data==>>>>",this.animelist)
     // });
     // this.animeservice.genreData.set(this.animelist)
+  }
+  reloadpage() {
+    if (this.router.url == '/search') {
+      // Force page reload
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/search']);
+      });
+    }
   }
   // @HostListener('document:click', ['$event'])
   // public documentClick(event: Event): void {

@@ -11,23 +11,25 @@ export class SearchAnimeComponent implements OnInit {
   // isSearching:boolean=true;
 
   animelist: any[] = [];
-  filteredItems: any;
+  filteredItems: any[] = [];
   // searchValue: any;
   searchValue = new FormControl('');
   pagination: any;
-  datagen: any = signal('');
+  datagen:any;
+  // datagen: any = signal('');
   searchbar: any = true;
-  selectedgen: any = signal('');
+  // selectedgen: any = signal('');
   constructor(private animeservice: AnimeService) {}
   ngOnInit(): void {
     console.log('data', this.animelist);
 
     // this.datagen = this.animeservice.datagen();
     // this.animelist = this.animeservice.genreData();
-    this.filteredItems = [];
+
     this.setValues();
     this.getAnime();
     console.log('data', this.filteredItems);
+    // window.location.reload();
   }
 
   setValues() {
@@ -40,6 +42,7 @@ export class SearchAnimeComponent implements OnInit {
     });
     // this.searchbar = this.animeservice.getSearchbar();
     console.log('datagen12', this.datagen, this.searchbar);
+  
   }
   getAnime() {
     // this.animeservice.getAnimeForSearch().subscribe((res: any) => {
@@ -47,6 +50,7 @@ export class SearchAnimeComponent implements OnInit {
     //   this.filteredItems = this.animelist.slice(0, 10);
     // });
     // let selectedgen = "";
+    this.filteredItems=[];
     this.animeservice.allAnimeMock().subscribe((res: any) => {
       this.animelist = res;
       console.log(res, 'rtest');
@@ -68,7 +72,10 @@ export class SearchAnimeComponent implements OnInit {
     //   })
   }
   filterByGenre(animelist: any, genre: any) {
-    let newList = animelist.filter((item: any) => item.genres.includes(genre));
+   
+    console.log("genre==",genre)
+    let newList = this.animelist.filter((item: any) => item.genres.includes(genre));
+    console.log("newlist",newList,animelist)
     return newList.slice(0, 10);
   }
 
