@@ -26,14 +26,22 @@ export class NavBarComponent implements OnInit {
   filteredItems: any;
   downloadJsonHref: any;
   selectedGenre: any;
+  isloginlist: any;
+  isDropdownOpen: any;
 
   constructor(private animeservice: AnimeService, private router: Router) {}
   ngOnInit(): void {}
-  animelist1 = ["All News","Aime Awards","Crunchyroll Expo","Anime Movie Night"];
+  animelist1 = [
+    'All News',
+    'Aime Awards',
+    'Crunchyroll Expo',
+    'Anime Movie Night',
+  ];
 
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
-    this.isnewsVisible=false;
+    this.isnewsVisible = false;
+    this.isDropdownOpen = !this.isDropdownOpen;
     console.log(this.isDropdownVisible);
     // this.animeservice.getgenre().subscribe({
     //   next: (res: any) => {
@@ -71,7 +79,8 @@ export class NavBarComponent implements OnInit {
 
   togglenews() {
     this.isnewsVisible = !this.isnewsVisible;
-   this.isDropdownVisible=false;
+    this.isDropdownVisible = false;
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
   search() {
     // this.animeservice.datagen.set(' ');
@@ -96,16 +105,25 @@ export class NavBarComponent implements OnInit {
       this.animeservice.getSearchbar()
     );
   }
-  reloadpage(givenurl:any) {
-    if (this.router.url == '/'+givenurl) {
+  reloadpage(givenurl: any) {
+    if (this.router.url == '/' + givenurl) {
       // Force page reload
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/'+givenurl]);
+        this.router.navigate(['/' + givenurl]);
       });
     }
   }
-  change(){
-    
+  change() {
     this.reloadpage('work-in-progress');
   }
+  togglelogin() {
+    this.isloginlist = !this.isloginlist;
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+  closeDropdown() {
+    this.isDropdownVisible = false;
+    this.isnewsVisible = false;
+    this.isDropdownOpen = false;
+  }
+ 
 }

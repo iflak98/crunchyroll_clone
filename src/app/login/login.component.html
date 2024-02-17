@@ -1,6 +1,49 @@
 <div class="container">
-    <img class="image"src="{{randomGifs}}" alt="Mystic Messenger Logo">
-    <h1> <strong >{{ randomQuote }}</strong></h1>
-    <button class="button"  routerLink="./home">Back to Home</button>
-</div>
+  <div class="inner container">
+    <div class="image-girl">
+        <img src=" ../assets/log-in-hime@2x.png" alt="">
+    </div>
+    <div class="login-page">
+      <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="phoneFormGroup" label="PHONE">
+          <form [formGroup]="phoneFormGroup">
+            <mat-form-field>
+              <mat-label> Phone Number</mat-label>
+              <div class="underline"></div>
+              <input
+                matInput
+                type="text"
+                formControlName="phoneNum"
+                required
+              />
+            </mat-form-field>
+            <div>
+              <button mat-button class="login-button" type="submit">LOG IN</button>
+              <!-- <button mat-button matStepperNext>Next</button> -->
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="emailFormGroup" label="EMAIL">
+          <form [formGroup]="emailFormGroup">
+            <div>
+              <mat-form-field class="email">
+                <mat-label>Email</mat-label>
+                <div class="underline"></div>
+                <input matInput type="email" formControlName="email" />
+              </mat-form-field>
+            </div>
+            <div class="password">
+              <mat-form-field class="password">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" />
+              </mat-form-field>
+              <a href="/">Forgot Password?</a>
+            </div>
 
+            <button mat-button class="login-button-2" type="submit">LOG IN</button>
+          </form>
+        </mat-step>
+      </mat-stepper>
+    </div>
+  </div>
+</div>

@@ -23,6 +23,9 @@ import { DescriptionLimitPipe } from './description-limit.pipe';
 import { LoginComponent } from './login/login.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { TempdevelopingComponent } from './tempdeveloping/tempdeveloping.component';
+import {MatStepperModule} from '@angular/material/stepper';
+// import { SidenavComponent } from './sidenav/sidenav.component';
+// import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,7 @@ import { TempdevelopingComponent } from './tempdeveloping/tempdeveloping.compone
     NavBarComponent,
     AnimeSliderComponent,
     PopularanimeComponent,
-    SearchAnimeComponent,DescriptionLimitPipe, LoginComponent, WatchlistComponent, TempdevelopingComponent
+    SearchAnimeComponent,DescriptionLimitPipe, LoginComponent, WatchlistComponent, TempdevelopingComponent, 
   ],
   imports: [
     BrowserModule,
@@ -42,8 +45,8 @@ import { TempdevelopingComponent } from './tempdeveloping/tempdeveloping.compone
     MatInputModule,
      BrowserAnimationsModule,
      FormsModule,ReactiveFormsModule ,
-     MatSelectModule,
-     
+     MatSelectModule,MatStepperModule,
+    //  MatSidenavModule,
      MatExpansionModule,MatGridListModule,MatListModule,MatIconModule, FontAwesomeModule,
   ],
   providers: [],

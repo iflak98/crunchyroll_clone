@@ -10,7 +10,7 @@ import { AnimeService } from '../services/anime.service';
 export class SearchAnimeComponent implements OnInit {
   // isSearching:boolean=true;
 
-  animelist: any[] = [];
+  animelist: any;
   filteredItems: any[] = [];
   // searchValue: any;
   searchValue = new FormControl('');
@@ -50,17 +50,22 @@ export class SearchAnimeComponent implements OnInit {
     // });
     // let selectedgen = "";
     this.filteredItems = [];
-    this.animeservice.allAnimeMock().subscribe((res: any) => {
-      this.animelist = res;
-      console.log(res, 'rtest');
-      if (this.searchbar == false || this.datagen != '') {
-        // this.selectedgen = this.datagen;
-        this.filteredItems = this.filterByGenre(this.animelist, this.datagen);
-        console.log('datagen---', this.datagen);
-      } else {
-        // this.datagen = '';
-        this.filteredItems = this.animelist.slice(0, 10);
-      }
+    this.animeservice.allAnimeMock().subscribe({
+      next: (res) => {
+        this.animelist = res;
+        console.log(res, 'rtest');
+        if (this.searchbar == false || this.datagen != '') {
+          // this.selectedgen = this.datagen;
+          this.filteredItems = this.filterByGenre(this.animelist, this.datagen);
+          console.log('datagen---', this.datagen);
+        } else {
+          // this.datagen = '';
+          this.filteredItems = this.animelist.slice(0, 10);
+        }
+      },
+      error: (errMsg) => {
+        console.log(errMsg);
+      },
     });
 
     // this. animeservice.getAnimeList(param).subscribe(

@@ -58,7 +58,29 @@
       <i class="material-icons" (click)="change()" routerLink="/work-in-progress">bookmark_border</i>
     </span>
     <span>
-      <i class="material-icons" (click)="change()" routerLink="/work-in-progress">login</i>
+      <i class="material-icons"   id="dropbtnlog"(click)="togglelogin()">login</i>
     </span>
+    <div>
+     
+      <div *ngIf="isloginlist" class="loginlist">
+        <div class="loginlist-content" >
+          <a href="">
+            <h3>Create Account</h3>
+            <p>join for free</p>
+            </a>
+            
+          </div>
+            <div class="loginlist-content" >
+          <a href="/login" >
+            <h3>Log In</h3>
+            <p>Already on Crunchroll, Welcome Back</p></a>
+        </div>
+       
+          <button class="premium-button">14 Day Free Trail</button>
+      
+      
+      </div>
+    </div>
   </div>
 </mat-toolbar>
+<div class="backdrop" [class.show]="isDropdownOpen" (click)="closeDropdown()"></div>
