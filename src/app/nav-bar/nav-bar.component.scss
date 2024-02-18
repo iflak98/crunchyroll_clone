@@ -283,3 +283,14 @@ width: 18rem;
   background-color: #f49c62;
 }
 }
+@media(max-width: 767px){
+  .navbar{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .navbar{
+    width: 100%;
+}
+}

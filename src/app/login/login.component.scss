@@ -156,3 +156,6 @@ button {
     color: white;
     background-color: #505152;
 }
+::ng-deep body{
+    background-color: black !important;
+}
