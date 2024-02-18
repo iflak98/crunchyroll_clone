@@ -283,14 +283,31 @@ width: 18rem;
   background-color: #f49c62;
 }
 }
-@media(max-width: 767px){
-  .navbar{
-    width: 50%;
-    margin-bottom: 30px;
+
+@media only screen and (max-width: 768px) {
+  .nav-left .dropdown,
+  .nav-left .button,
+  .nav-left .dropbtn {
+    display: none;
+  }
 }
+@media only screen and (max-width: 768px) {
+  .crunchyroll-title {
+    font-size: 1rem;
+  }
+
+  .crunchyroll-logo {
+    width: 2rem;
+    height: 1rem;
+  }
+
+  .nav-right .material-icons {
+    font-size: 1rem;
+  }
+
+  .nav-right .button {
+    font-size: 12px;
+    padding: 10px;
+  }
 }
-@media(max-width: 574px){
-  .navbar{
-    width: 100%;
-}
-}
+

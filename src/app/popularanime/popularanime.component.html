@@ -35,7 +35,8 @@
     </div>
   </div>
 </div>
-
+<div class="container">
+  
 <div *ngFor="let ani of filteredItems" class="card2">
   <img src="{{ ani.images.jpg.image_url }}" alt="Card Image" />
 
@@ -44,11 +45,12 @@
     <h3>{{ ani.title_japanese }}</h3>
     <p><strong>Ranking: </strong> {{ ani.rank }}</p>
     <p><strong>Total Episodes: </strong>{{ ani.episodes }}</p>
-    <p class="card2-description">{{ ani.synopsis }}</p>
+    <p class="card2-description">{{ ani.synopsis | descriptionLimit }}</p>
     <a href="{{ ani.url }}" class="play-button">View Details</a>
   </div>
 </div>
-<div >
-  <img src="..\assets\stillLooking.png" alt="" style="width: 88rem;"/>
+<div class="findconta">
+  <img src="..\assets\stillLooking.png" alt="" />
   <button class="button"  routerLink="./search">Search For Favorite</button>
+</div>
 </div>

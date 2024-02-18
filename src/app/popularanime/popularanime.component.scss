@@ -124,7 +124,7 @@ button {
 
   font-weight: bolder;
   position: relative;
-  left: 45%;
+  // left: 45%;
 
 }
 
@@ -132,4 +132,33 @@ button:hover {
   cursor: pointer;
   transform: scale(1.04);
   color: #F47521;
+}
+.findconta{
+  display: flex;
+  flex-direction: column;
+justify-content: center;  align-items: center;
+
+img{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container{
+    width: 100%;
+  }
+  .card {
+    width: calc(50% - 20px); /* Adjusted to fit two cards per row on medium screens */
+  }
+  // .card2 {
+  //   width: calc(50% - 20px); /* Adjusted to fit two cards per row on medium screens */
+  // }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px); /* Adjusted to fit one card per row on small screens */
+  }
+  // .card2 {
+  //   width: calc(100% - 20px); /* Adjusted to fit one card per row on small screens */
+  // }
 }

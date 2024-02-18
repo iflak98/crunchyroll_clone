@@ -145,3 +145,54 @@ img {
   left:10%;
   width:23rem;
 }
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 768px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 1rem;
+    top: calc(100% - 2rem);
+    max-width: 80%;
+  }
+  
+  .anime-info {
+    font-size: 0.8rem;
+    top: 15%;
+    width: 90%;
+    left: 5%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 12px;
+  }
+  
+  .title {
+    font-size: 0.8rem;
+    top: calc(100% - 3rem);
+    max-width: 100%;
+    height: 100%;
+  }
+  
+  .anime-info {
+   display:none;
+  }
+  img{
+     min-height:12rem;
+  }
+  h1 {
+    font-size: 1.2rem; /* Adjust as needed */
+    margin: 0; /* Remove any default margin */
+  }
+  .mySlides{
+    width: 100%;
+    height: 13rem;
+  }
+}

@@ -124,6 +124,7 @@ export class NavBarComponent implements OnInit {
     this.isDropdownVisible = false;
     this.isnewsVisible = false;
     this.isDropdownOpen = false;
+    this.isloginlist=false;
   }
  
 }
