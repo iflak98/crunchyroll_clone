@@ -19,7 +19,7 @@
   </div>
 </div>
 <div class="container">
-  <h1>Top-Raking Anime</h1>
+  <h1>Top-Ranking Anime</h1>
   <div class="outer-card">
     <div *ngFor="let ani of topRankedAnime" class="card">
       <img src="{{ ani.images.jpg.image_url }}" altImage=".." />
@@ -36,21 +36,20 @@
   </div>
 </div>
 <div class="container">
-  
-<div *ngFor="let ani of filteredItems" class="card2">
-  <img src="{{ ani.images.jpg.image_url }}" alt="Card Image" />
+  <div *ngFor="let ani of filteredItems" class="card2">
+    <img src="{{ ani.images.jpg.image_url }}" alt="Card Image" />
 
-  <div class="card2-content">
-    <h2 class="card2-title">{{ ani.title }}</h2>
-    <h3>{{ ani.title_japanese }}</h3>
-    <p><strong>Ranking: </strong> {{ ani.rank }}</p>
-    <p><strong>Total Episodes: </strong>{{ ani.episodes }}</p>
-    <p class="card2-description">{{ ani.synopsis | descriptionLimit }}</p>
-    <a href="{{ ani.url }}" class="play-button">View Details</a>
+    <div class="card2-content">
+      <h2 class="card2-title">{{ ani.title }}</h2>
+      <h3>{{ ani.title_japanese }}</h3>
+      <p><strong>Ranking: </strong> {{ ani.rank }}</p>
+      <p><strong>Total Episodes: </strong>{{ ani.episodes }}</p>
+      <p class="card2-description">{{ ani.synopsis | descriptionLimit }}</p>
+      <a href="{{ ani.url }}" class="play-button">View Details</a>
+    </div>
   </div>
-</div>
-<div class="findconta">
-  <img src="..\assets\stillLooking.png" alt="" />
-  <button class="button"  routerLink="./search">Search For Favorite</button>
-</div>
+  <div class="findconta">
+    <img src="..\assets\stillLooking.png" alt="" />
+    <button class="button" routerLink="./search">Search For Favorite</button>
+  </div>
 </div>
