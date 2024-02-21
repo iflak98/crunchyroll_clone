@@ -5,7 +5,7 @@
 
   <div class="outer-card">
     <div *ngFor="let ani of popularAnime" class="card">
-      <img src="{{ ani.images.jpg.image_url }}" altImage=".." />
+      <img src="{{ ani.images.jpg.image_url }}"   onerror="this.src='./assets/icon-image-not-found-free-vector.jpg'" altImage=".." />
       <h4 class="Anime-name">{{ ani.title }}</h4>
       <div class="card-content">
         <h2 class="card2-title">{{ ani.title }}</h2>
@@ -22,7 +22,7 @@
   <h1>Top-Ranking Anime</h1>
   <div class="outer-card">
     <div *ngFor="let ani of topRankedAnime" class="card">
-      <img src="{{ ani.images.jpg.image_url }}" altImage=".." />
+      <img src="{{ ani.images.jpg.image_url }}"  onerror="this.src='./assets/icon-image-not-found-free-vector.jpg'" altImage=".." />
       <h4 class="Anime-name">{{ ani.title }}</h4>
       <div class="card-content">
         <h2 class="card2-title">{{ ani.title }}</h2>
@@ -37,7 +37,7 @@
 </div>
 <div class="container">
   <div *ngFor="let ani of filteredItems" class="card2">
-    <img src="{{ ani.images.jpg.image_url }}" alt="Card Image" />
+    <img src="{{ ani.images.jpg.image_url }}"  onerror="this.src='./assets/icon-image-not-found-free-vector.jpg'" alt="Card Image" />
 
     <div class="card2-content">
       <h2 class="card2-title">{{ ani.title }}</h2>

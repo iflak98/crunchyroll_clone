@@ -26,7 +26,7 @@
   }
 
   .card2-description {
-    color: rgb(85, 85, 85);
+    color: rgb(113, 112, 112);
     margin-bottom: 20px;
   }
 
@@ -91,4 +91,71 @@ input{
  ::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
     border-bottom-color: var(--mdc-theme-primary,#F47521) !important;
  }
-  
+ @media only screen and (max-width: 768px) {
+  .container {
+    width: calc(100% - 20px);
+  }
+  .search-form{
+    padding: 0px;
+    height: 5rem;
+    padding-left: 4rem;
+    mat-form-field{
+      font-size: 1rem;
+    }
+  }
+  .card {
+    width: calc(100% - 20px);
+    padding: 4px;
+    /* contain-intrinsic-height: auto 100px; */
+    height: 12rem;
+  }
+  .card2 {
+    width: calc(100% - 20px);
+    padding: 4px;
+    /* contain-intrinsic-height: auto 100px; */
+    height: 12rem;
+    img{
+      padding: 2px;
+    min-width: 6rem;
+    
+    height: 7rem;
+    }
+    .card2-content {
+      padding: 2px;
+      font-size: 0.6rem !important;
+      p{
+        margin:0px;
+        padding:1px;
+      }
+      h3{
+        margin:0px;
+      }
+
+    }
+    
+    .card2-title {
+      color: white;
+       font-size: 0.7rem;
+      margin-bottom: 0px;
+    }
+    
+    .card2-description {
+   
+      top: 21px;
+      width: 144%;
+      position: relative;
+      // color: white;
+      overflow: hidden;
+      left: -103px;
+      font-size: inherit;
+    }
+    .play-button{
+      padding: 5px 5px;
+    
+    position: relative;
+    top: -128px;
+    left: 141px;
+    font-size: smaller;
+    }
+  }
+}

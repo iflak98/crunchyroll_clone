@@ -93,6 +93,7 @@ export class NavBarComponent implements OnInit {
   genreSelected(genre: any) {
     this.selectedGenre = genre;
     this.isDropdownVisible = !this.isDropdownVisible;
+    this.isDropdownOpen = !this.isDropdownOpen;
     // this.animeservice.datagen.set(this.selectedGenre);
     this.animeservice.setgenreSelected(this.selectedGenre);
     this.animeservice.setSearchBar(false);

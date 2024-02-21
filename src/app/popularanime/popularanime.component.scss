@@ -1,5 +1,4 @@
 .card {
-
   width: 300px;
   height: 400px;
   position: relative;
@@ -8,15 +7,23 @@
 
 .outer-card {
   display: inline-flex;
-  // overflow: auto;
   white-space: nowrap;
   padding: 10px;
 }
 
 @media only screen and (max-width: 600px) {
   .card {
-    /* Make the cards take up the full space on small screens */
-    width: 100%;
+    width: calc(50% - 20px);
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px);
+    height: auto;
+    margin-bottom: 20px;
   }
 }
 
@@ -24,8 +31,7 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: auto;
-
-  width: 88rem;
+  width: 100%;
   flex-wrap: wrap;
 }
 
@@ -34,9 +40,9 @@
 }
 
 .card img {
-  width: 90%;
-  height: 90%;
-  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -69,10 +75,6 @@
   margin-top: 0;
 }
 
-
-
-
-// ........
 .card2 {
   display: flex;
   max-width: 100%;
@@ -85,8 +87,8 @@
 
 .card2 img {
   padding: 40px;
-  width: 250px;
-  height: 100%;
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -107,7 +109,7 @@
 
 .play-button {
   padding: 10px 20px;
-  background-color: #F47521;
+  background-color: #f47521;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
@@ -115,50 +117,100 @@
 }
 
 button {
-  border: 2px solid #F47521;
+  border: 2px solid #f47521;
   padding: 3px;
   background-color: transparent;
-  color: #F47521;
+  color: #f47521;
   height: 4rem;
   width: 10rem;
-
   font-weight: bolder;
   position: relative;
-  // left: 45%;
-
 }
 
 button:hover {
   cursor: pointer;
   transform: scale(1.04);
-  color: #F47521;
+  color: #f47521;
 }
-.findconta{
+
+.findconta {
   display: flex;
   flex-direction: column;
-justify-content: center;  align-items: center;
-
-img{
-    width: 100%;
-  }
+  justify-content: center;
+  align-items: center;
 }
+
+.findconta img {
+  width: 100%;
+}
+
 @media only screen and (max-width: 768px) {
-  .container{
-    width: 100%;
+  .container {
+    width: calc(100% - 20px);
   }
   .card {
-    width: calc(50% - 20px); /* Adjusted to fit two cards per row on medium screens */
+    width: calc(100% - 20px);
+    padding: 4px;
+    /* contain-intrinsic-height: auto 100px; */
+    height: 12rem;
   }
-  // .card2 {
-  //   width: calc(50% - 20px); /* Adjusted to fit two cards per row on medium screens */
-  // }
+  .card2 {
+    width: calc(100% - 20px);
+    padding: 4px;
+    /* contain-intrinsic-height: auto 100px; */
+    height: 12rem;
+    img{
+      padding: 2px;
+    min-width: 6rem;
+    
+    height: 7rem;
+    }
+    .card2-content {
+      padding: 2px;
+      font-size: 0.6rem !important;
+      p{
+        margin:0px;
+        padding:1px;
+      }
+      h3{
+        margin:0px;
+      }
+
+    }
+    
+    .card2-title {
+      color: white;
+       font-size: 0.7rem;
+      margin-bottom: 0px;
+    }
+    
+    .card2-description {
+      color: #555;
+      top: 10px;
+      width: 144%;
+      position: relative;
+      // color: white;
+      overflow: hidden;
+      left: -103px;
+      font-size: inherit;
+    }
+    .play-button{
+      padding: 5px 5px;
+    background-color: #f47521;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    top: -128px;
+    left: 141px;
+    font-size: smaller;
+    }
+  }
 }
 
 @media only screen and (max-width: 480px) {
   .card {
-    width: calc(100% - 20px); /* Adjusted to fit one card per row on small screens */
+    width: calc(100% - 20px);
   }
-  // .card2 {
-  //   width: calc(100% - 20px); /* Adjusted to fit one card per row on small screens */
-  // }
 }
