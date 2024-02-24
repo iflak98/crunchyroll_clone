@@ -24,7 +24,7 @@
           </form>
         </mat-step>
         <mat-step [stepControl]="emailFormGroup" label="EMAIL">
-          <form [formGroup]="emailFormGroup">
+          <form [formGroup]="emailFormGroup"  (ngSubmit)="login()">
             <div>
               <mat-form-field class="email">
                 <mat-label>Email</mat-label>
@@ -35,9 +35,11 @@
             <div class="password">
               <mat-form-field class="password">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password" />
+                <input matInput  id="password-form" type="password"
+                formControlName="password" />
+                <span class="show-pass"  (click)="toggleShowPass()"></span>
               </mat-form-field>
-              <a href="/">Forgot Password?</a>
+              <a  class="forgot-password"href="/">Forgot Password?</a>
             </div>
 
             <button mat-button class="login-button-2" type="submit">LOG IN</button>

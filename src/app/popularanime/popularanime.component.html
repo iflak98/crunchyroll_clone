@@ -39,13 +39,14 @@
   <div *ngFor="let ani of filteredItems" class="card2">
     <img src="{{ ani.images.jpg.image_url }}"  onerror="this.src='./assets/icon-image-not-found-free-vector.jpg'" alt="Card Image" />
 
-    <div class="card2-content">
+    <div class="card2-content" >
       <h2 class="card2-title">{{ ani.title }}</h2>
       <h3>{{ ani.title_japanese }}</h3>
       <p><strong>Ranking: </strong> {{ ani.rank }}</p>
       <p><strong>Total Episodes: </strong>{{ ani.episodes }}</p>
       <p class="card2-description">{{ ani.synopsis | descriptionLimit }}</p>
-      <a href="{{ ani.url }}" class="play-button">View Details</a>
+      <span [hidden]="!loggedin"> <a   href="{{ ani.url }}"  class="play-button">View Details</a></span>
+      
     </div>
   </div>
   <div class="findconta">

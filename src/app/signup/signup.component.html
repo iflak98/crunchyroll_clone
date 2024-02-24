@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="inner container">
+        <div class="image-girl">
+            <img src=" ../assets/register-hime.png" alt="">
+        </div>
+<div class="login-page">
+    <form [formGroup]="emailFormGroup"  (ngSubmit)="signup()">
+        <div>
+          <mat-form-field class="email">
+            <mat-label>Email</mat-label>
+            <div class="underline"></div>
+            <input matInput type="email" formControlName="email" />
+          </mat-form-field>
+        </div>
+        <div class="password">
+          <mat-form-field class="password">
+            <mat-label>Password</mat-label>
+            <input matInput  id="password-form" type="password"
+            formControlName="password" />
+            <span class="show-pass"  (click)="toggleShowPass()"></span>
+          </mat-form-field>
+          
+        </div>
+
+        <button mat-button class="login-button-2" type="submit">LOG IN</button>
+      </form>
+</div>
+</div>
+</div>

@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
 import { faSignal } from '@fortawesome/free-solid-svg-icons';
 import { AnimeService } from '../services/anime.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -28,15 +29,30 @@ export class NavBarComponent implements OnInit {
   selectedGenre: any;
   isloginlist: any;
   isDropdownOpen: any;
+  userLoggedIn:  any;
 
-  constructor(private animeservice: AnimeService, private router: Router) {}
-  ngOnInit(): void {}
+  constructor(private animeservice: AnimeService, private router: Router,private userservice:UserService) {}
+  ngOnInit(): void {
+    this.loginstatus();
+  }
+  loginstatus(){
+    this.userservice.getloginauth().subscribe((res)=>{
+      console.log("Login status : ", res);
+      
+        this.userLoggedIn= res;
+    
+    })
+  }
   animelist1 = [
     'All News',
     'Aime Awards',
     'Crunchyroll Expo',
     'Anime Movie Night',
   ];
+  signout(){
+    localStorage.setItem( "isLoggedin", "false");
+    window.location.reload();
+  }
 
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;

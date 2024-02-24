@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AnimeService } from '../services/anime.service';
 import { interval, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-anime-slider',
@@ -11,8 +12,9 @@ import { take } from 'rxjs/operators';
 export class AnimeSliderComponent implements OnInit,OnDestroy{
   animelist: any;
  subscription: Subscription;
+  isloggedin: any;
 
-  constructor(private animeservice: AnimeService) {
+  constructor(private animeservice: AnimeService, private userservice:UserService) {
     this.subscription = interval(4000).pipe(
       take(Infinity)
     ).subscribe(() => {
@@ -23,6 +25,12 @@ export class AnimeSliderComponent implements OnInit,OnDestroy{
   slideIndex = 1;
 
   ngOnInit(): void {
+    this.userservice.getloginauth().subscribe((data)=>{
+      this.isloggedin = data;
+      console.log("login==>",this.isloggedin);
+    })
+    // this.isloggedin=localStorage.getItem('isLoggedin');
+    
     this.showSlides(this.slideIndex);
     
   }

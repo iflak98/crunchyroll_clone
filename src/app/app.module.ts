@@ -25,6 +25,8 @@ import { WatchlistComponent } from './watchlist/watchlist.component';
 import { TempdevelopingComponent } from './tempdeveloping/tempdeveloping.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { FooterComponent } from './footer/footer.component';
+import { SignupComponent } from './signup/signup.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 // import { SidenavComponent } from './sidenav/sidenav.component';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 
@@ -35,7 +37,7 @@ import { FooterComponent } from './footer/footer.component';
     NavBarComponent,
     AnimeSliderComponent,
     PopularanimeComponent,
-    SearchAnimeComponent,DescriptionLimitPipe, LoginComponent, WatchlistComponent, TempdevelopingComponent, FooterComponent, 
+    SearchAnimeComponent,DescriptionLimitPipe, LoginComponent, WatchlistComponent, TempdevelopingComponent, FooterComponent, SignupComponent, 
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { FooterComponent } from './footer/footer.component';
      BrowserAnimationsModule,
      FormsModule,ReactiveFormsModule ,
      MatSelectModule,MatStepperModule,
+MatTooltipModule,
     //  MatSidenavModule,
      MatExpansionModule,MatGridListModule,MatListModule,MatIconModule, FontAwesomeModule,
   ],

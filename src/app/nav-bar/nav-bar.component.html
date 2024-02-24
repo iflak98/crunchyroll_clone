@@ -52,19 +52,23 @@
       download="download.json"
     ></a> -->
     <span>
-      <i class="material-icons"  (click)="search()" routerLink="/search">search</i>
+      <i class="material-icons"  (click)="search()" routerLink="/search" matTooltip="search">search</i>
     </span>
     <span>
       <i class="material-icons" (click)="change()" routerLink="/work-in-progress">bookmark_border</i>
     </span>
-    <span>
-      <i class="material-icons"   id="dropbtnlog"(click)="togglelogin()">login</i>
+    <span [hidden]="userLoggedIn">
+      <i class="material-icons"   id="dropbtnlog"(click)="togglelogin()"  matTooltip="login">login</i>
+    </span>
+    <span [hidden]="!userLoggedIn">
+      <i class="material-icons"   (click)="signout()" matTooltip="signout">logout</i>
+      
     </span>
     <div>
      
       <div *ngIf="isloginlist" class="loginlist">
         <div class="loginlist-content" >
-          <a href="">
+          <a href="/signup">
             <h3>Create Account</h3>
             <p>join for free</p>
             </a>

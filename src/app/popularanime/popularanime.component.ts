@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimeService } from '../services/anime.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-popularanime',
@@ -12,8 +13,13 @@ export class PopularanimeComponent implements OnInit {
   filteredItems: any[] = [];
   topRankedAnime: any[] = [];
   popularAnime: any[] = [];
-  constructor(private animeservice: AnimeService, private router: Router) {}
+  loggedin: any;
+  constructor(private animeservice: AnimeService, private router: Router,private userService: UserService) {}
   ngOnInit(): void {
+    this.userService.getloginauth().subscribe(
+      (res) => {
+      this.loggedin=res
+      console.log("Auth status : ", res,!this.loggedin)});
     console.log('data', this.animelist);
     const param = {
       // page:4,
