@@ -96,10 +96,7 @@ export class AnimeService {
     );
     return this.http.get(this.apiUrl, { params: param });
   }
-  // getAnimePicturesbyId(id: number): Observable<any> {
-  //   // https://api.jikan.moe/v4/anime/{id}/pictures
-  //   return this.http.get(this.apiUrl + '/' + id + '/pictures');
-  // }
+ 
   getAnimeForSearch(): Observable<any> {
     const options = {
       params: {

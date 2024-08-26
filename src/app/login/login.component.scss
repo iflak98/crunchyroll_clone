@@ -12,7 +12,7 @@
 }
 
 ::ng-deep .mat-horizontal-content-container {
-    height: 12.7rem;
+    height: 16.7rem;
 }
 
 ::ng-deep .mat-mdc-form-field {
@@ -58,8 +58,8 @@
 }
 
 .login-button-2 {
-    top: 27rem;
-    right: 3rem;
+    top: 26rem;
+    right: 5rem;
     height: 2.5rem;
     background-color: #F47521;
     border: none;
@@ -79,8 +79,8 @@
 }
 
 .login-button {
-    top: 24rem;
-    right: 3rem;
+    top: 20rem;
+    right: 5rem;
     height: 2.5rem;
     background-color: #F47521;
     border: none;
@@ -151,53 +151,52 @@ form {
 
 }
 
-::ng-deep 
-    .mat-step-label {
-        font-size: 1.5rem;
+::ng-deep .mat-step-label {
+    font-size: 1.5rem;
 
-        &.mat-step-label-active.mat-step-label-selected {
-            // font-size: 1rem;
-            color: white;
-        }
-    }
-
-    ::ng-deep .mat-stepper-horizontal-line {
-        display: none;
-    }
-
-    ::ng-deep .mat-step-header[aria-selected="true"] {
-        font-size: 4rem;
+    &.mat-step-label-active.mat-step-label-selected {
+        // font-size: 1rem;
         color: white;
-        border-bottom: 3px solid #f49c62;
-        ;
-        // border-bottom: 2px solid #434140;
-
-        // & div.mat-step-label.mat-step-label-active.mat-step-label-selected {
-        // //   border-bottom: 2px solid #f49c62; /* Adding an orange underline */
-        //   .mat-horizontal-stepper-header-container{
-        //     border-bottom: 2px solid #f49c62;;
-        // }
-        // }
     }
+}
 
-    ::ng-deep .mat-horizontal-stepper-wrapper {
+::ng-deep .mat-stepper-horizontal-line {
+    display: none;
+}
 
-        background-color: #505152;
-    }
+::ng-deep .mat-step-header[aria-selected="true"] {
+    font-size: 4rem;
+    color: white;
+    border-bottom: 3px solid #f49c62;
+    ;
+    // border-bottom: 2px solid #434140;
 
-    button {
-        color: white;
-        background-color: #505152;
-    }
+    // & div.mat-step-label.mat-step-label-active.mat-step-label-selected {
+    // //   border-bottom: 2px solid #f49c62; /* Adding an orange underline */
+    //   .mat-horizontal-stepper-header-container{
+    //     border-bottom: 2px solid #f49c62;;
+    // }
+    // }
+}
 
-    ::ng-deep body {
-        background-color: black !important;
+::ng-deep .mat-horizontal-stepper-wrapper {
 
-    }
+    background-color: #505152;
+}
 
-    .forgot-password {
-        color: white;
-        position: absolute;
-        z-index: 9;
-        top: 23rem;
-    }
+button {
+    color: white;
+    background-color: #505152;
+}
+
+::ng-deep body {
+    background-color: black !important;
+
+}
+
+.forgot-password {
+    color: white;
+    position: absolute;
+    z-index: 9;
+    top: 23rem;
+}

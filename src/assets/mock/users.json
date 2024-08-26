@@ -1,4 +1,5 @@
 [
     { "username": "iflak", "password": "123456" },
-    { "username": "user2", "password": "iflak" }
+    { "username": "user2", "password": "iflak" },
+    { "username": "user3", "password": "iflak" }
   ]
