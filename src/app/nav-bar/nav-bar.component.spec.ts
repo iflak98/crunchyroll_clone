@@ -115,19 +115,7 @@ describe('NavBarComponent', () => {
     // expect(window.location.reload).toHaveBeenCalled();
   });
 
-  it('should run #undefined()', async () => {
-    // Error: ERROR this JS code is invalid, "anime.genres.forEach((genre)"
-    //     at Util.getFuncReturn (C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\util.js:325:13)
-    //     at C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\util.js:413:30
-    //     at Array.forEach (<anonymous>)
-    //     at Util.getFuncParamObj (C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\util.js:396:26)
-    //     at Util.getFuncArguments (C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\util.js:347:30)
-    //     at Util.getFuncReturn (C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\util.js:332:34)
-    //     at FuncTestGen.setMockData (C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\func-test-gen.js:159:31)
-    //     at FuncTestGen.setMockData (C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\func-test-gen.js:90:12)
-    //     at C:\Users\IYOUSUFM\AppData\Roaming\npm\node_modules\ngentest\lib\func-test-gen.js:80:14
-    //     at Array.forEach (<anonymous>)
-  });
+
 
   it('should run #togglenews()', async () => {
     component.togglenews();

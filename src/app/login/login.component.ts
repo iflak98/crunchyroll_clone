@@ -14,10 +14,12 @@ export class LoginComponent implements OnInit {
     firstCtrl: ['', Validators.required],
     phoneNum: '+91',
   });
+  // updateOn: 'blur' makes validators and valueChanges trigger only after the control
+  // loses focus. This prevents showing validation errors before the user interacts.
   emailFormGroup = this._formBuilder.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
-  });
+  }, { updateOn: 'blur' });
   isLinear = false;
 
   constructor(

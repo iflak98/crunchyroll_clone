@@ -78,8 +78,9 @@ export class NavBarComponent implements OnInit {
       // Iterate over each anime object
       this.animelist.forEach((anime: { genres: any[] }) => {
         // Iterate over genres of each anime and add them to the set
-        anime.genres.forEach((genre: any) => {
-          this.genre.add(genre);
+        anime.genres.forEach((res: any) => {
+          if(res!=='Hentai'&& res!=="Erotica")
+          this.genre.add(res);
         });
       });
       console.log('genres', this.genre);

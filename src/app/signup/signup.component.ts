@@ -8,10 +8,11 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
+  // Use updateOn: 'blur' so validators run only after user leaves the field.
   emailFormGroup = this._formBuilder.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
-  });
+  }, { updateOn: 'blur' });
   constructor(private _formBuilder: FormBuilder,private userService: UserService){}
   toggleShowPass(){
     const passInput= <HTMLInputElement>document.getElementById('password-form');

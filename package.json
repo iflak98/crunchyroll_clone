@@ -1,9 +1,9 @@
 {
   "name": "crunchyroll-clone",
-  "version": "0.0.0",
+  "version": "0.2",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.9",
-    "@angular/cli": "^16.2.9",
+    "@angular/cli": "^16.2.16",
     "@angular/compiler-cli": "^16.2.0",
     "@jsdevtools/karma-config": "^3.2.0",
     "@types/jasmine": "~4.3.0",

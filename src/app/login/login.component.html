@@ -4,27 +4,9 @@
         <img src=" ../assets/log-in-hime@2x.png" alt="">
     </div>
     <div class="login-page">
-      <mat-stepper [linear]="isLinear" #stepper>
-        <mat-step [stepControl]="phoneFormGroup" label="PHONE">
-          <form [formGroup]="phoneFormGroup">
-            <mat-form-field>
-              <mat-label> Phone Number</mat-label>
-              <div class="underline"></div>
-              <input
-                matInput
-                type="text"
-                id="otp-form"
-                formControlName="phoneNum"
-                required
-              />
-            </mat-form-field>
-            <div>
-              <button mat-button class="login-button" type="submit">LOG IN</button>
-              <!-- <button mat-button matStepperNext>Next</button> -->
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="emailFormGroup" label="EMAIL">
+      <mat-stepper   [linear]="isLinear" #stepper>
+
+    <mat-step label="EMAIL">
           <form [formGroup]="emailFormGroup"  (ngSubmit)="login()">
             <div>
               <mat-form-field class="email">
@@ -44,6 +26,25 @@
             </div>
 
             <button mat-button class="login-button-2" type="submit">LOG IN</button>
+          </form>
+        </mat-step>
+      <mat-step label="PHONE">
+          <form [formGroup]="phoneFormGroup">
+            <mat-form-field>
+              <mat-label> Phone Number</mat-label>
+              <div class="underline"></div>
+              <input
+                matInput
+                type="text"
+                id="otp-form"
+                formControlName="phoneNum"
+                required
+              />
+            </mat-form-field>
+            <div>
+              <button mat-button class="login-button" type="submit">LOG IN</button>
+              <!-- <button mat-button matStepperNext>Next</button> -->
+            </div>
           </form>
         </mat-step>
       </mat-stepper>
