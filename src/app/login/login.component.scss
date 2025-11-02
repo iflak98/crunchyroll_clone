@@ -2,7 +2,6 @@
     margin-top: 7rem;
     height: 18rem;
     width: 60rem; /* increased to allow wider form */
-    // height: 58rem !important;
     background: transparent !important;
 }
 
@@ -10,9 +9,6 @@
     width: 100%;
     height: 100%;
     background-color: black;
-}
-::ng-deep .mat-step-label .mat-step-label-active {
-    color:#f49c62 !important;
 }
 ::ng-deep .mat-horizontal-content-container {
     /* increase height so there's room for inputs and the login button */
@@ -23,7 +19,6 @@
     margin-top: 16px;
     background-color: transparent !important;
     --mdc-filled-text-field-focus-active-indicator-color: #F47521;
-    ;
     --mdc-filled-text-field-focus-label-text-color: #a0a0a0;
 
 }
@@ -231,15 +226,6 @@ input[type="tel"] {
     font-size: 4rem;
     color: white;
     border-bottom: 3px solid #f49c62;
-    ;
-    // border-bottom: 2px solid #434140;
-
-    // & div.mat-step-label.mat-step-label-active.mat-step-label-selected {
-    // //   border-bottom: 2px solid #f49c62; /* Adding an orange underline */
-    //   .mat-horizontal-stepper-header-container{
-    //     border-bottom: 2px solid #f49c62;;
-    // }
-    // }
 }
 
 /* ensure unselected step headers use the accent color for their label */
